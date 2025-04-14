@@ -17,6 +17,6 @@ jobs:
         run: |
           echo "✅ Verificando archivos..."
           if [ ! -f "index.html" ]; then echo "❌ Falta index.html" && exit 1; fi
-          if [ ! -f "styles.css" ]; then echo "❌ Falta styles.css" && exit 1; fi
+          if [ ! -f "style.css" ]; then echo "❌ Falta style.css" && exit 1; fi
           if [ ! -f "script.js" ]; then echo "❌ Falta script.js" && exit 1; fi
           echo "🎉 Todos los archivos están presentes."
