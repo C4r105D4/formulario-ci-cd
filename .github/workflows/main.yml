@@ -1,0 +1,22 @@
+name: Verificar estructura del proyecto
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+
+      - name: Verificar archivos requeridos
+        run: |
+          echo "✅ Verificando archivos..."
+          if [ ! -f "index.html" ]; then echo "❌ Falta index.html" && exit 1; fi
+          if [ ! -f "styles.css" ]; then echo "❌ Falta styles.css" && exit 1; fi
+          if [ ! -f "script.js" ]; then echo "❌ Falta script.js" && exit 1; fi
+          echo "🎉 Todos los archivos están presentes."
